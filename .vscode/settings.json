@@ -1,0 +1,11 @@
+{
+  "files.associations": { "*.rst": "restructuredtext" },
+  "esbonio.server.enabled": true,
+  "esbonio.sphinx.confDir": "${workspaceFolder}/docs/source",            // folder that contains conf.py
+  "esbonio.sphinx.buildDir": "${workspaceFolder}/docs/source/_build",
+  "esbonio.sphinx.buildCommand": "sphinx-build -b html ${workspaceFolder}/docs/source ${workspaceFolder}/docs/source/_build/html",
+  "[restructuredtext]": {
+    "editor.wordWrap": "on",
+    "editor.rulers": [100]
+  }
+}
