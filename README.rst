@@ -1,9 +1,5 @@
-Template for the Read the Docs tutorial
+MissStrawBerry's World
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+This is a place for documenting MissStrawBerry's Thoughts with some basic Sphinx docs.
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
