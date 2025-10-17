@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Deocumentation Demo'
-copyright = '2025, Wenjing'
-author = 'Wenjing'
+project = 'Documentation Demo'
+copyright = '2025, MissStrawBerry'
+author = 'MissStrawBerry'
 
 release = '0.1'
 version = '0.1.0'
