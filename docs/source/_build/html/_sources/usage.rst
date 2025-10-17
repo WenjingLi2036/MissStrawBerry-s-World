@@ -1,9 +1,9 @@
 Usage
 =====
 
-.. _installation:
+.. _modulepeople:
 
-Installation
+Module People
 ------------
 
 To use Lumache, first install it using pip:
@@ -32,3 +32,7 @@ For example:
 >>> lumache.get_random_ingredients()
 ['shells', 'gorgonzola', 'parsley']
 
+.. _modulefactorial:
+
+Module Factorial
+----------------

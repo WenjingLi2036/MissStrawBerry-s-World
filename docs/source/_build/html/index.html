@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to MissStrawBerry’s documentation! &#8212; Documentation Demo 0.1 documentation</title>
+    <title>Documentation Demo &#8212; Documentation Demo 0.1 documentation</title>
   
   
   
@@ -43,7 +43,13 @@
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'generated/lumache';</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'py-modindex';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Usage" href="usage.html" />
@@ -279,7 +285,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to MissStrawBerry’s documentation!</h1>
+    <h1>Documentation Demo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -289,6 +295,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 </ul>
             </nav>
@@ -301,29 +308,48 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="welcome-to-missstrawberry-s-documentation">
-<h1>Welcome to MissStrawBerry’s documentation!<a class="headerlink" href="#welcome-to-missstrawberry-s-documentation" title="Link to this heading">#</a></h1>
-<p><strong>MissStrawBerry</strong> (/mɪsˈstrɔːbəri/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the <a class="reference external" href="https://world.openfoodfacts.org/">Open Food Facts database</a>
-and offers a <em>simple</em> and <em>intuitive</em> API.</p>
-<p>Check out the <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a> section for further information, including
-how to <a class="reference internal" href="usage.html#installation"><span class="std std-ref">Installation</span></a> the project.</p>
+  <section id="documentation-demo">
+<h1>Documentation Demo<a class="headerlink" href="#documentation-demo" title="Link to this heading">#</a></h1>
+<p>This is a demo page to show how to use ReadtheDocs to automatically generate documentation website based on your <strong>Python</strong> code. Other code such as Arduino, C/C++ should also be supported but needs to be tested.</p>
+<p>Readthedocs automatically pulls docstrings from your code file. Some useful tutorials can be found <a class="reference external" href="https://docs.readthedocs.com/platform/stable/tutorial/index.html">here</a>, <a class="reference external" href="https://pythonforthelab.com/blog/documenting-with-sphinx-and-readthedocs">here</a>, and <a class="reference external" href="https://amazonwebshark.com/open-source-documentation-with-read-the-docs">here</a>.</p>
+<p>Different from Github, Readthedocs uses reStructuredText (<code class="docutils literal notranslate"><span class="pre">.rst</span></code> format, instead of <code class="docutils literal notranslate"><span class="pre">.md</span></code> format of Markdown) for plain text markup. Here are some cheat sheets of the <code class="docutils literal notranslate"><span class="pre">.rst</span></code> format:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst">ralsina/rst-cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-tutorial.readthedocs.io/cheatsheet">https://sphinx-tutorial.readthedocs.io/cheatsheet</a></p></li>
+</ul>
+<p>This demonstrates the page reference function:
+<a class="reference internal" href="usage.html#modulefactorial"><span class="std std-ref">Module Factorial</span></a> and <a class="reference internal" href="usage.html#modulepeople"><span class="std std-ref">Module People</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This project is under active development.</p>
 </div>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Register an account on <a class="reference external" href="https://docs.readthedocs.com/platform/stable/tutorial/index.html">Read the Docs</a></p></li>
+</ol>
+<figure class="align-default">
+<img alt="_images/fig1.png" src="_images/fig1.png" />
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Create a new project and link it to your GitHub repository.</p></li>
+</ol>
+</section>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li></li>
+</ol>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#module-people">Module People</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#creating-recipes">Creating recipes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="usage.html#lumache.get_random_ingredients"><code class="docutils literal notranslate"><span class="pre">get_random_ingredients()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="usage.html#lumache.InvalidKindError"><code class="docutils literal notranslate"><span class="pre">InvalidKindError</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#module-factorial">Module Factorial</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
@@ -372,6 +398,7 @@ how to <a class="reference internal" href="usage.html#installation"><span class=
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 </ul>
   </nav></div>
