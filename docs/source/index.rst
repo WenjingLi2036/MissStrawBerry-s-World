@@ -103,4 +103,5 @@ Contents
 .. toctree::
 
    usage
+   factorial
    api
