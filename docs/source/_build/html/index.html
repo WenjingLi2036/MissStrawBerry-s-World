@@ -296,6 +296,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-code-setup-optional-but-highly-recommended">Visual Studio Code Setup (Optional but Highly Recommended)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-contents">Modify the Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-cpp-files">Document cpp files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 </ul>
             </nav>
@@ -326,20 +329,82 @@
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Register an account on <a class="reference external" href="https://docs.readthedocs.com/platform/stable/tutorial/index.html">Read the Docs</a></p></li>
+<li><p>Register an account on <a class="reference external" href="https://docs.readthedocs.com/platform/stable/tutorial/index.html">Read the Docs</a>. In the page, connect your GitHub account.</p></li>
 </ol>
 <figure class="align-default">
 <img alt="_images/fig1.png" src="_images/fig1.png" />
 </figure>
 <ol class="arabic simple" start="2">
-<li><p>Create a new project and link it to your GitHub repository.</p></li>
+<li><p>Fork this repo () and name the new repo based on your project. You will use it as a starting point.</p></li>
+<li><p>Go back to your ReadtheDocs homepage, click the <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">a</span> <span class="pre">Project</span></code> button on the top of the page, and then select the repository you just created by clicking the + sign next to it.</p></li>
 </ol>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Please make sure that the repository you created is <strong>public</strong> in order for Readthedocs to access it.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Readthedocs will import the selected repository and start bulding the website. Under the <code class="docutils literal notranslate"><span class="pre">Builds</span></code> tab, you can see the build progress or errors. Typically the build should finish in about 30 seconds. Once the build passes, press the green <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Docs</span></code> button on the top right corner. It will open up a webpage which is the same as you are looking at right now.</p></li>
+<li><p>Now your webpage is live online and you could copy the url and share it with others! By default, Readthedocs tracks the repository such that each <code class="docutils literal notranslate"><span class="pre">push</span></code> operation will trigger a rebuild (update) of the entire webpage, as you can see in the <code class="docutils literal notranslate"><span class="pre">Builds</span></code> tab.</p></li>
+</ol>
+</section>
+<section id="visual-studio-code-setup-optional-but-highly-recommended">
+<h2>Visual Studio Code Setup (Optional but Highly Recommended)<a class="headerlink" href="#visual-studio-code-setup-optional-but-highly-recommended" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>As mentioned above, each <code class="docutils literal notranslate"><span class="pre">push</span></code> operation to your GitHub repository will automatically trigger a rebuild of the entire webpage. Although this process is relatively fast (&lt;1 min), it is still preferrable if we can see the changes reflected locally and in <em>real time</em> before pushing the changes to GitHub. In this case, we can use Visual Studio Code (VSCode) to build the documentation website locally.</p></li>
+<li><p>Clone the GitHub repository you just created to your local PC and open the folder in VSCode through <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Open</span> <span class="pre">Folder...</span></code> tab.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file under the <code class="docutils literal notranslate"><span class="pre">docs/source/</span></code> folder. Select the Python interpreter by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> and type <code class="docutils literal notranslate"><span class="pre">Python:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span></code> in the popup window. Click <code class="docutils literal notranslate"><span class="pre">python:</span> <span class="pre">Select</span> <span class="pre">Interpreter</span></code> and choose the python excutable you want to use. According to <a class="reference external" href="https://docs.readthedocs.com/platform/stable/tutorial/index.html">this page</a>, you can also select a virtual python environment.</p></li>
+<li><p>Install the following packages.
+xxx</p></li>
+<li><p>Go to the Extensions tab on the left panel of VSCode. Install the <code class="docutils literal notranslate"><span class="pre">Python</span></code> extension by Microsoft and any subsequent extensions it prompts you to install. The install <code class="docutils literal notranslate"><span class="pre">Live</span> <span class="pre">Preview</span></code> extension by Microsoft. Then install <code class="docutils literal notranslate"><span class="pre">rstStructuredText</span></code> extension by LeXtudio Inc. Then install <code class="docutils literal notranslate"><span class="pre">reStructuredText</span> <span class="pre">Syntax</span></code> extension by Trond Snekvik if  VSCode does not automatically prompt you to do so. In the end, VSCode should also prompt you to install <code class="docutils literal notranslate"><span class="pre">esbonio</span></code> and <code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Engine</span></code>, please also install it.</p></li>
+<li><p>Now you should see a <code class="docutils literal notranslate"><span class="pre">esbonio</span></code> label on the bottom status bar of VSCode. If you click it, it will probably says <code class="docutils literal notranslate"><span class="pre">esbonio:</span> <span class="pre">Sphinx</span> <span class="pre">not</span> <span class="pre">found</span></code>. Don’t worry. Open the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file under <code class="docutils literal notranslate"><span class="pre">.vscode</span></code> folder that was just created. Add the following lines and save the file.</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;esbonio.sphinx.confDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/docs/source&quot;</span><span class="p">,</span>
+<span class="nt">&quot;esbonio.sphinx.buildDir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/docs/source/_build&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>if <code class="docutils literal notranslate"><span class="pre">.vscode</span></code> folder is not automatically created, please manually create it under the root folder and create the <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> file inside it.</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">esbonio</span></code> label on the bottom status bar again to rebuild the webpage. If the build succeeds, you should see something like below:</p></li>
+<li><p>Now you should see a <code class="docutils literal notranslate"><span class="pre">_build</span></code> folder created under the <code class="docutils literal notranslate"><span class="pre">docs/source/</span></code> folder. Open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file under the <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code> folder in VSCode, and click the <code class="docutils literal notranslate"><span class="pre">Preview</span></code> button on the top right corner.</p></li>
+<li><p>A webpage should automatically pop up in VSCode that looks like the following. Now each time you make some changes to any of the webpages and save, the webpage on the right will automatically refresh to reflect the changes.</p></li>
+<li><p>Now we will move to the next section and show how to modify this demo page based on your own project.</p></li>
+</ol>
+</section>
+<section id="modify-the-contents">
+<h2>Modify the Contents<a class="headerlink" href="#modify-the-contents" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>The main configuration file are <code class="docutils literal notranslate"><span class="pre">.readthedocs.yaml</span></code> and <code class="docutils literal notranslate"><span class="pre">/docs/cnf.py</span></code>. You could infer the meaning of each settings by their names. Please keep most of the settings unchanges unless <strong>you underdstand what you are doing</strong>. However, you should change the <code class="docutils literal notranslate"><span class="pre">esbonio</span></code>,``esbonio``,``esbonio``, <code class="docutils literal notranslate"><span class="pre">esbonio</span></code>, and <code class="docutils literal notranslate"><span class="pre">esbonio</span></code> information to fit your own identity.</p></li>
+<li><p>The main page is <code class="docutils literal notranslate"><span class="pre">/docs/source/index.rst</span></code>. Each other page should have their own <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file and be added to the main page under  <code class="docutils literal notranslate"><span class="pre">..toctree::</span></code>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sphinx requires that the toctree lists include all pages. If a page is not in any toctree, it is a page with no parent page, or an “orphan page, and the Sphinx build will produce an error. If for some reason a page must be in the documentation not in the left navigation, the <code class="docutils literal notranslate"><span class="pre">:orphan:</span></code> directive can be added at the top of that page so that Sphinx will build without errors (as seen on this page!). Please avoid the <code class="docutils literal notranslate"><span class="pre">:orphan:</span></code> directive as much as possible.</p>
+</div>
+<p>3.IN the demo, we showed two codes (<code class="docutils literal notranslate"><span class="pre">factorial.py``and</span> <span class="pre">``python.py</span></code>) used as Python modules, i.e., they are saved under <code class="docutils literal notranslate"><span class="pre">my_module/</span></code> folder with a <code class="docutils literal notranslate"><span class="pre">__init__.py``file.</span> <span class="pre">Typically,</span> <span class="pre">each</span> <span class="pre">``.py</span></code> file should be accompanied with a corresponding <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file under <code class="docutils literal notranslate"><span class="pre">docs/source/</span></code> (or subfolder of <code class="docutils literal notranslate"><span class="pre">docs/source/</span></code>). They don’t need to share the same name but it is recommended to do so.</p>
+<ol class="arabic simple" start="4">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">my_module/factorial.py</span></code>, a function <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> is defined. Similarly, in <code class="docutils literal notranslate"><span class="pre">my_module/people.py</span></code>, two classes <code class="docutils literal notranslate"><span class="pre">People</span></code> and <code class="docutils literal notranslate"><span class="pre">Teacher</span></code> are defined, where <code class="docutils literal notranslate"><span class="pre">Teacher</span></code> subclasses <code class="docutils literal notranslate"><span class="pre">People</span></code>. All the documentation should be put in the triple quotation marks as shown in the file. Doc test is also supported by using the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> symbol.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check in the documentation of the class <code class="docutils literal notranslate"><span class="pre">Teacher</span></code> in <code class="docutils literal notranslate"><span class="pre">my_module/people.py</span></code> how we use the internal cross-reference <code class="docutils literal notranslate"><span class="pre">:class:</span> <span class="pre">`Person`</span> <span class="pre">``</span> <span class="pre">to</span> <span class="pre">link</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">documentation</span> <span class="pre">of</span> <span class="pre">its</span> <span class="pre">parent</span> <span class="pre">class</span> <span class="pre">``People</span></code>.</p>
+</div>
+</section>
+<section id="document-cpp-files">
+<h2>Document cpp files<a class="headerlink" href="#document-cpp-files" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake">https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;aytackahveci93/documenting-c-code-with-sphinx-d6315b338615">https://medium.com/&#64;aytackahveci93/documenting-c-code-with-sphinx-d6315b338615</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development.</p>
+</div>
 </section>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li></li>
-</ol>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a><ul>
@@ -399,6 +464,9 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-code-setup-optional-but-highly-recommended">Visual Studio Code Setup (Optional but Highly Recommended)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modify-the-contents">Modify the Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#document-cpp-files">Document cpp files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 </ul>
   </nav></div>
